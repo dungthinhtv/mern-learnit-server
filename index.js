@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const authRouter = require('./routes/auth');
-// const postRouter = require('./routes/post')
+const postRouter = require('./routes/post');
 
 const connectDB = async () => {
   try {
@@ -26,5 +26,6 @@ connectDB();
 const app = express();
 
 app.use('/', authRouter);
+app.use('/', postRouter);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
